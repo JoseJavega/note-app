@@ -16,7 +16,7 @@ async function initApp() {
     const path = window.location.pathname;
     if (path.includes('index.html') || path === '/') {
         notesController.initIndex();
-    } else if (path.includes('spacework.html')) {
+    } else if (path.includes('editor.html')) {
         notesController.initEditor();
     }
     
