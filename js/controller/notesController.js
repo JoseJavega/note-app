@@ -11,7 +11,7 @@ export const notesController = {
             notes, 
             'files', 
             (id) => {
-                window.location.href = `spacework.html?id=${id}`;
+                window.location.href = `editor.html?id=${id}`;
             },
             (id) => {
                 const note = notesModel.getById(id);

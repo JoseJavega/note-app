@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/editor.css">
+    <title>Editor</title>
+</head>
+<body>
+    <!-- Main navigation -->
+    <header id="navbar"></header>
+
+    <div class="sidebars">
+        <div class="first-sidebars">
+            <button class="sidebars-btn" data-open-modal="container-insert">
+                <svg class="icon icon-navbar"><title>Icon insert</title><use href="assets/icons.svg#icon-insert"></use></svg>
+            </button>
+            <button class="sidebars-btn">
+                <svg class="icon icon-navbar"><title>Icon H1</title><use href="assets/icons.svg#icon-h1"></use></svg>
+            </button>
+            <button class="sidebars-btn">
+                <svg class="icon icon-navbar"><title>Icon H2</title><use href="assets/icons.svg#icon-h2"></use></svg>
+            </button>
+            <button class="sidebars-btn">
+                <svg class="icon icon-navbar"><title>Icon H3</title><use href="assets/icons.svg#icon-h3"></use></svg>
+            </button>
+            <button class="sidebars-btn" data-open-modal="container-format">
+                <svg class="icon icon-navbar"><title>Icon format</title><use href="assets/icons.svg#icon-format"></use></svg>
+            </button>
+        </div>
+        <div class="second-sidebars">
+            <button id="save-btn" class="sidebars-btn">
+                <svg class="icon icon-navbar"><title>Icon save</title><use href="assets/icons.svg#icon-save"></use></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main content -->
+<main class="workspace">
+        <div id="title" class="title" contenteditable="true">Title</div>
+        <div id="note-content" class="editable-sheet" contenteditable="true">Write here...</div>
+
+        <div id="modal"></div>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+    <script src="js/components/navbar.js"></script>
+    <script src="js/components/modals.js"></script>
+</body>
+</html>
