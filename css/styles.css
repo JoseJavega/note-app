@@ -1,0 +1,520 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/*-------------------------------------------------*/
+/*                   GLOVAL VARS                   */
+/*-------------------------------------------------*/
+:root {
+}
+
+/*-------------------------------------------------*/
+/*                      RESET                      */
+/*-------------------------------------------------*/
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+button {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+[contenteditable] {
+  outline: none;
+}
+
+/*-------------------------------------------------*/
+/*                      LAYOUT                     */
+/*-------------------------------------------------*/
+body {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+body.is-ready {
+  opacity: 1;
+  display: flex;
+  flex-direction: row;
+  margin: 0 9.38rem;
+  height: 100%;
+  background-color: #f4f1dd;
+  color: #656058;
+  color: #656058;
+  font-family:
+    Open Sans,
+    sans-serif;
+}
+
+/* Fuente para el texto */
+h1,
+h2,
+h3,
+span,
+p,
+button,
+.welcome {
+  color: #656058;
+  font-family:
+    Open Sans,
+    sans-serif;
+}
+
+/* Tablet / Landscape Phone (min-width: 768px) */
+@media (min-width: 768px) {
+  /* TODO: UI teammate will add tablet-specific overrides here */
+}
+
+/* Desktop / Laptop (min-width: 1024px) */
+@media (min-width: 1024px) {
+  /* TODO: UI teammate will add desktop-specific overrides here */
+}
+
+/*-------------------------------------------------*/
+/*                COMPONENT: navBar                */
+/*-------------------------------------------------*/
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1.88rem 3.13rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  padding: 15px 10px;
+}
+
+/* Estado */
+.nav-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: all 0.3s ease-in-out;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 40px;
+}
+
+.nav-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, 0);
+}
+
+.first-nav,
+.second-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fffdf9;
+  border-radius: 50px;
+  margin: 15px 0;
+}
+
+/* == NAVBAR: media queries ==*/
+/* Tablet */
+@media (min-width: 768px) {
+  /* TODO: tablet-specific styles */
+}
+/* Desktop */
+@media (min-width: 1024px) {
+  /* TODO: desktop-specific styles */
+}
+
+/*-------------------------------------------------*/
+/*                COMPONENT: buttons               */
+/*-------------------------------------------------*/
+
+/* -- Estado normal -- */
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  stroke: #656058;
+  color: #656058;
+  display: inline-block;
+  z-index: 1000;
+}
+
+/* -- feedback visual -- */
+
+/* estado hover y active */
+button,
+a {
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 20px;
+}
+
+button:hover,
+a:hover {
+  background-color: rgba(105, 73, 8, 0.2);
+}
+
+button:active,
+a:active {
+  transform: translateY(2px); /* Se mueve hacia abajo */
+}
+
+/* animacion sobre iconos del navbar */
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.icon-navbar:hover {
+  animation: zoom 2s ease-in-out infinite;
+}
+
+/* == BUTTONS: media queries ==*/
+/* Tablet */
+@media (min-width: 768px) {
+  /* TODO: tablet-specific styles */
+}
+/* Desktop */
+@media (min-width: 1024px) {
+  /* TODO: desktop-specific styles */
+}
+
+/*-------------------------------------------------*/
+/*                COMPONENT: modals               */
+/*-------------------------------------------------*/
+.modal {
+  /* Posicionamiento */
+  position: fixed;
+  transform: scale(0.7);
+
+  /* Layout */
+  max-width: 15%;
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  background-color: rgba(210, 192, 155, 0.9);
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 25px rgba(75, 71, 63, 0.2);
+
+  /* Estado */
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.modal-content-area {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* link to spacework */
+.container-item {
+  display: flex;
+  align-items: center;
+  margin-top: 0.85rem;
+}
+
+.modal-title {
+  padding-right: 1.5rem;
+}
+
+.icon-modal {
+  margin-right: 0.5rem;
+  padding: 0;
+}
+
+/* container button close */
+.close-btn {
+  display: flex;
+  justify-content: flex-end;
+  max-height: min-content;
+}
+
+.icon-close {
+  padding: 0;
+}
+
+/* == MODALS: media queries ==*/
+/* Tablet */
+@media (min-width: 768px) {
+  /* TODO: tablet-specific styles */
+}
+/* Desktop */
+@media (min-width: 1024px) {
+  /* TODO: desktop-specific styles */
+}
+
+/*-------------------------------------------------*/
+/*                   PAGES: index                  */
+/*-------------------------------------------------*/
+blockquote {
+  color: #a09786;
+  margin: 10px 0;
+}
+
+.welcome {
+  padding-top: 30px;
+  font-size: 200%;
+  font-weight: 700;
+}
+
+/* --- Actions --- */
+.create-btn {
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 100px;
+  border: none;
+  flex-shrink: 0; /*Flexbox: le ordena que no se modifiquen las medidas para adaptarse al espacio*/
+  margin: 20px 0;
+  background-color: #d2c09b;
+  font-size: 20px;
+  color: white;
+}
+
+/* --- file cards --- */
+.files {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.note-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 10vw;
+  min-width: 10vw;
+}
+
+h3,
+p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* == INDEX: media queries ==*/
+/* Tablet */
+@media (min-width: 768px) {
+  /* TODO: tablet-specific styles */
+}
+/* Desktop */
+@media (min-width: 1024px) {
+  /* TODO: desktop-specific styles */
+}
+
+/*-------------------------------------------------*/
+/*                   PAGES: editor                 */
+/*-------------------------------------------------*/
+
+/* Sidebars tools */
+.sidebars {
+  position: fixed;
+  width: 40px;
+  margin: 90px 30px;
+  padding: 0;
+}
+
+.first-sidebars,
+.second-sidebars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fffdf9;
+  border-radius: 50px;
+  height: auto;
+  padding: 20px 0;
+  margin: 15px 0;
+}
+
+/* space to writing */
+.workspace {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 50px 120px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 2px solid #a09786;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.editable-sheet {
+  width: 100%;
+  min-height: 80vh;
+  margin: 20px 0;
+  border: 2px solid #a09786;
+  border-radius: 10px;
+  padding: 30px 60px;
+  box-sizing: border-box; /*Evitar que la hoja se haga mas ancha por el padding*/
+  background-color: #fffdf9;
+  font-size: 15px;
+}
+
+/* == EDITOR: media queries ==*/
+/* Tablet */
+@media (min-width: 768px) {
+  /* TODO: tablet-specific styles */
+}
+/* Desktop */
+@media (min-width: 1024px) {
+  /* TODO: desktop-specific styles */
+}
+
+/*-------------------------------------------------*/
+/*                   PAGES: singUp                  */
+/*-------------------------------------------------*/
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.col {
+  flex: 1;
+}
+
+.left {
+  background-color: #212844;
+}
+
+main {
+  padding: 70px 90px;
+}
+
+.message {
+  font-size: 90px;
+  font-weight: 700;
+  color: #acb4d2;
+  padding: 120px 80px;
+}
+
+.logo {
+  display: flex;
+  font-size: 25px;
+  font-weight: 700;
+  color: #a09786;
+  margin: 0;
+  height: 30px;
+  padding: 5px 0 5px 0;
+}
+
+p {
+  padding-left: 15px;
+  margin: 0;
+}
+
+.icon-logo {
+  height: 30px;
+  width: auto;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 0;
+  padding: 5px 0 5px 0;
+}
+
+.signup-form {
+  color: #a09786;
+  font-weight: 500;
+  display: grid;
+  align-items: center;
+  width: 100%;
+  padding: 5px 0 5px 0;
+}
+
+input {
+  border-radius: 20px;
+  border-style: none;
+  background-color: #c6bdab;
+  height: 40px;
+  margin: 10px;
+  font-style: italic;
+}
+
+input:focus {
+  outline: none; /* Opcional: quita el borde azul por defecto del navegador */
+  border-style: solid;
+  border-color: #a09786;
+  border-width: 2px;
+}
+
+.group-signup {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+button {
+  background-color: #d2c09b;
+  color: #fff;
+  border-style: none;
+  border-radius: 20px;
+  height: 40px;
+  margin: 10px;
+  font-weight: 600;
+  padding: 5px 0 5px 0;
+}
+
+.createAccount {
+  padding: 5px 0 5px 0;
+  font-size: 15px;
+  height: 45px;
+}
+
+.createNewAccount {
+  text-align: center;
+  padding: 5px 0 5px 0;
+}
+
+.login {
+  font-weight: 800;
+  color: inherit;
+}
+
+.styleTerms {
+  color: #4f65b9;
+}
+
+/* == SIGNUP: media queries ==*/
+/* Tablet */
+@media (min-width: 768px) {
+  /* TODO: tablet-specific styles */
+}
+/* Desktop */
+@media (min-width: 1024px) {
+  /* TODO: desktop-specific styles */
+}
