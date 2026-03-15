@@ -4,6 +4,61 @@
 /*                   GLOVAL VARS                   */
 /*-------------------------------------------------*/
 :root {
+  /* --- PALETA DE COLORES  --- */
+
+  /* Fondos y Superficies */
+  --color-bg: #f4f1dd; /* Crema principal de la app */
+  --color-surface: #fffdf9; /* Fondo de tarjetas y sidebars */
+  --color-surface-dark: #212844; /* Fondo oscuro (SignUp) */
+  --color-input-bg: #c6bdab; /* Fondo de inputs (SignUp) */
+  /* Identidad y Acciones */
+  --color-primary: #d2c09b; /* Color arena (Botones, Modales) */
+  --color-accent: #4f65b9; /* Azul para links/términos */
+  --color-accent-muted: #acb4d2; /* Azul claro para mensajes */
+  /* Texto */
+  --color-text-main: #656058; /* Gris amarronado principal */
+  --color-text-muted: #a09786; /* Gris para blockquotes y placeholders */
+  --color-text-light: #ffffff; /* Texto sobre botones oscuros */
+  /* Feedback Visual */
+  --color-hover-overlay: rgba(105, 73, 8, 0.2);
+  --color-shadow: rgba(75, 71, 63, 0.2);
+  --color-modal-overlay: rgba(210, 192, 155, 0.9);
+
+  /* --- TIPOGRAFÍA Y FONT SIZES --- */
+  --font-main: "Open Sans", sans-serif;
+  --font-size-xs: 0.75rem; /* 12px  - Notas, captions */
+  --font-size-s: 0.875rem; /* 14px  - Texto secundario */
+  --font-size-base: 1rem; /* 16px  - Cuerpo de texto */
+  --font-size-m: 1.125rem; /* 18px  - Inputs, labels */
+  --font-size-l: 1.25rem; /* 20px  - Subtítulos */
+  --font-size-xl: 1.5rem; /* 24px  - Títulos pequeños */
+  --font-size-xxl: 2rem; /* 32px  - Títulos de sección (h2) */
+
+  /* Tamaños más grandes para impacto visual */
+  --font-size-hero: 3.125rem; /* 50px - h1 de SignUp */
+  --font-size-display: 5.625rem; /* 90px - Mensaje de bienvenida grande */
+
+  /* --- LINE HEIGHTS  --- */
+  --line-height-base: 1.5;
+  --line-height-tight: 1.2;
+
+  /* --- ESPACIADOS  --- */
+  --spacing-xs: 0.5rem; /* 8px aprox */
+  --spacing-s: 0.85rem;
+  --spacing-m: 1rem;
+  --spacing-l: 1.5rem;
+  --spacing-xl: 3.13rem; /* El 50px de los paddings */
+  --spacing-layout-x: 9.38rem; /* El margen lateral del body */
+
+  /* --- BORDES Y RADIOS --- */
+  --radius-s: 10px;
+  --radius-m: 20px;
+  --radius-round: 50px; /* Para sidebars/inputs */
+  --radius-full: 100px; /* Botón circular */
+  --border-thin: 2px solid var(--color-text-muted);
+
+  /* --- TRANSICIONES --- */
+  --transition-main: all 0.3s ease-in-out;
 }
 
 /*-------------------------------------------------*/
@@ -33,7 +88,7 @@ a {
 /*-------------------------------------------------*/
 body {
   opacity: 0;
-  transition: opacity 0.3s ease-out;
+  transition: var(--transition-main);
 }
 
 body.is-ready {
@@ -42,12 +97,9 @@ body.is-ready {
   flex-direction: row;
   margin: 0 9.38rem;
   height: 100%;
-  background-color: #f4f1dd;
-  color: #656058;
-  color: #656058;
-  font-family:
-    Open Sans,
-    sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  font-family: var(--font-main);
 }
 
 /* Fuente para el texto */
@@ -58,10 +110,8 @@ span,
 p,
 button,
 .welcome {
-  color: #656058;
-  font-family:
-    Open Sans,
-    sans-serif;
+  color: var(--color-text-main);
+  font-family: var(--font-main);
 }
 
 /* Tablet / Landscape Phone (min-width: 768px) */
@@ -96,7 +146,7 @@ button,
   opacity: 0;
   visibility: hidden;
   transform: translateY(-20px);
-  transition: all 0.3s ease-in-out;
+  transition: var(--transition-main);
   list-style: none;
   padding: 0;
   margin: 0;
@@ -114,8 +164,8 @@ button,
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fffdf9;
-  border-radius: 50px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-round);
   margin: 15px 0;
 }
 
@@ -142,8 +192,8 @@ button {
 .icon {
   width: 24px;
   height: 24px;
-  stroke: #656058;
-  color: #656058;
+  stroke: var(--color-text-main);
+  color: var(--color-text-main);
   display: inline-block;
   z-index: 1000;
 }
@@ -154,13 +204,13 @@ button {
 button,
 a {
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  border-radius: 20px;
+  transition: var(--transition-main);
+  border-radius: var(--radius-m);
 }
 
 button:hover,
 a:hover {
-  background-color: rgba(105, 73, 8, 0.2);
+  background-color: var(--color-hover-overlay);
 }
 
 button:active,
@@ -208,11 +258,11 @@ a:active {
   /* Layout */
   max-width: 15%;
   display: flex;
-  gap: 1.5rem;
+  gap: var(--spacing-l);
   padding: 1.25rem;
-  background-color: rgba(210, 192, 155, 0.9);
+  background-color: var(--color-modal-overlay);
   border-radius: 1.25rem;
-  box-shadow: 0 10px 25px rgba(75, 71, 63, 0.2);
+  box-shadow: 0 10px 25px var(--color-shadow);
 
   /* Estado */
   visibility: hidden;
@@ -237,15 +287,15 @@ a:active {
 .container-item {
   display: flex;
   align-items: center;
-  margin-top: 0.85rem;
+  margin-top: var(--spacing-s);
 }
 
 .modal-title {
-  padding-right: 1.5rem;
+  padding-right: var(--spacing-l);
 }
 
 .icon-modal {
-  margin-right: 0.5rem;
+  margin-right: var(--spacing-xs);
   padding: 0;
 }
 
@@ -274,7 +324,7 @@ a:active {
 /*                   PAGES: index                  */
 /*-------------------------------------------------*/
 blockquote {
-  color: #a09786;
+  color: var(--color-text-muted);
   margin: 10px 0;
 }
 
@@ -288,13 +338,13 @@ blockquote {
 .create-btn {
   min-width: 50px;
   min-height: 50px;
-  border-radius: 100px;
+  border-radius: var(--radius-full);
   border: none;
   flex-shrink: 0; /*Flexbox: le ordena que no se modifiquen las medidas para adaptarse al espacio*/
   margin: 20px 0;
-  background-color: #d2c09b;
-  font-size: 20px;
-  color: white;
+  background-color: var(--color-primary);
+  font-size: var(--font-size-l);
+  color: var(--color-text-light);
 }
 
 /* --- file cards --- */
@@ -302,7 +352,7 @@ blockquote {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: var(--spacing-l);
 }
 
 .note-card {
@@ -316,7 +366,7 @@ blockquote {
 h3,
 p {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--font-size-s);
   font-weight: 400;
 }
 
@@ -348,8 +398,8 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fffdf9;
-  border-radius: 50px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-round);
   height: auto;
   padding: 20px 0;
   margin: 15px 0;
@@ -367,8 +417,8 @@ p {
   display: flex;
   justify-content: center;
   width: 100%;
-  border-bottom: 2px solid #a09786;
-  font-size: 2rem;
+  border-bottom: 2px solid var(--color-text-muted);
+  font-size: var(--font-size-xxl);
   font-weight: 800;
 }
 
@@ -376,12 +426,12 @@ p {
   width: 100%;
   min-height: 80vh;
   margin: 20px 0;
-  border: 2px solid #a09786;
-  border-radius: 10px;
+  border: 2px solid var(--color-text-muted);
+  border-radius: var(--radius-s);
   padding: 30px 60px;
   box-sizing: border-box; /*Evitar que la hoja se haga mas ancha por el padding*/
-  background-color: #fffdf9;
-  font-size: 15px;
+  background-color: var(--color-surface);
+  font-size: var(--font-size-base);
 }
 
 /* == EDITOR: media queries ==*/
@@ -407,7 +457,7 @@ p {
 }
 
 .left {
-  background-color: #212844;
+  background-color: var(--color-surface-dark);
 }
 
 main {
@@ -417,15 +467,15 @@ main {
 .message {
   font-size: 90px;
   font-weight: 700;
-  color: #acb4d2;
+  color: var(--color-text-light);
   padding: 120px 80px;
 }
 
 .logo {
   display: flex;
-  font-size: 25px;
+  font-size: var(--font-size-xl);
   font-weight: 700;
-  color: #a09786;
+  color: var(--color-text-muted);
   margin: 0;
   height: 30px;
   padding: 5px 0 5px 0;
@@ -442,13 +492,13 @@ p {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: var(--font-size-hero);
   margin: 0;
   padding: 5px 0 5px 0;
 }
 
 .signup-form {
-  color: #a09786;
+  color: var(--color-text-muted);
   font-weight: 500;
   display: grid;
   align-items: center;
@@ -457,9 +507,9 @@ h1 {
 }
 
 input {
-  border-radius: 20px;
+  border-radius: var(--radius-m);
   border-style: none;
-  background-color: #c6bdab;
+  background-color: var(--color-input-bg);
   height: 40px;
   margin: 10px;
   font-style: italic;
@@ -468,7 +518,7 @@ input {
 input:focus {
   outline: none; /* Opcional: quita el borde azul por defecto del navegador */
   border-style: solid;
-  border-color: #a09786;
+  border-color: var(--color-text-muted);
   border-width: 2px;
 }
 
@@ -479,10 +529,10 @@ input:focus {
 }
 
 button {
-  background-color: #d2c09b;
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
   border-style: none;
-  border-radius: 20px;
+  border-radius: var(--radius-m);
   height: 40px;
   margin: 10px;
   font-weight: 600;
@@ -491,7 +541,7 @@ button {
 
 .createAccount {
   padding: 5px 0 5px 0;
-  font-size: 15px;
+  font-size: var(--font-size-base);
   height: 45px;
 }
 
@@ -506,7 +556,7 @@ button {
 }
 
 .styleTerms {
-  color: #4f65b9;
+  color: var(--color-accent);
 }
 
 /* == SIGNUP: media queries ==*/
